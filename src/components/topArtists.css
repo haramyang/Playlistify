@@ -1,0 +1,25 @@
+.TopArtists {
+	height:100%;
+	display: flex;
+	align-items: flex-start;
+}
+
+.left{
+	width:50%;
+	height:90%;
+	background-color: blue;
+}
+
+.right {
+	width:50%;
+	height:90%;
+	background-color: red;
+}
+
+.content {
+	padding: 10px;
+}
+
+.playArtist {
+	margin-bottom: 20px;
+}

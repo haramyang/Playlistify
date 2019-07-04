@@ -8,8 +8,8 @@ class TopArtists extends Component {
 		return (
 			<div className = "TopArtists">
 			  <div className = "left">
-				<Paper>
-				  <div className = "arist">
+			    <Paper>
+				  <div className = "artist">
 				    <Typography variant="headline" component="h3">
 				      Hillsong United
 				    </Typography>
@@ -27,7 +27,7 @@ class TopArtists extends Component {
 
 			        <button className="playArtist">Play Hillsong United</button>
 		          </div>
-			    </Paper>
+		        </Paper>
 			  </div>
 			  <div className = "right">
 			  </div>

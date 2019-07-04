@@ -16,6 +16,10 @@
 	background-color: red;
 }
 
+.artist {
+	background-color: yellow;
+}
+
 .content {
 	padding: 10px;
 }

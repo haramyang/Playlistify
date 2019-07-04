@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import TopArtists from './topArtists.js';
+import FeaturedArtist from './featuredArtist.js';
 import './App.css';
 
 function App() {
@@ -17,12 +18,13 @@ function App() {
         <TopArtists />
       </div>
 
-      <div className="topArtist">
+      <div className="featuredArtist">
         <p> Your Top Artist </p>
+        <FeaturedArtist />
       </div>
 
-      <div className = "footer">
-        <p> footer here </p>
+      <div className = "suggested">
+        <p> Suggested Artists and Tracks </p>
       </div>
     </div>
   );

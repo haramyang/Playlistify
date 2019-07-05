@@ -8,6 +8,25 @@ class TopArtists extends Component {
 		return (
 			<div className = "TopArtists">
 			  <div className = "left">
+			    <Paper>
+				  <div className = "artist">
+				    <Typography variant="headline" component="h3">
+				      Hillsong United
+				    </Typography>
+				    <div className="artistName">
+			          <p>Hillsong United</p>
+			        </div>
+
+		          	<div className = "artistImage">
+		          	  <img src='#' alt='artistImage'/>
+		          	</div>
+
+			        <div className="content">
+			          Information about Hillsong United.
+			        </div>
+			        <button className="playArtist">Play Hillsong United</button>
+		          </div>
+		        </Paper>
 			  </div>
 			  <div className = "right">
 			  </div>

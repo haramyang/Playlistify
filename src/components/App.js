@@ -8,26 +8,31 @@ function App() {
   return (
     <div className="App">
       <header className = "App-header">
-        Your favorite Artists and Tracks
+        <div className = "header-wrapper">
+          <span className = "logo">Spotifavorify SKRRTTT</span>
+          <span className = "nav-bar">
+            <a href = "#"><span className = "profile"> Personal Profile </span></a>
+            <a href = "#"><span className = "artist"> Artists </span></a>
+            <a href = "#"><span className = "tracks"> Tracks </span></a> 
+          </span>
+        </div>
       </header>
 
-      <div className = "topArtists">
-        <div className = "favArtists">
-          <p> Your Favorite Artists </p>
+      <div className = "content">
+        <div className = "content-wrapper">
+          <a href = "#" className = "profile"> Personal Profile </a>
+          <a href = "#" className = "artist"> Artists </a>
+          <a href = "#" className = "tracks"> Tracks </a>
         </div>
-        <TopArtists />
       </div>
 
-      <div className="featuredArtist">
-        <p> Your Top Artist </p>
-        <FeaturedArtist />
-      </div>
-
-      <div className = "suggested">
-        <p> Suggested Artists and Tracks </p>
-      </div>
+      <footer className = "App-footer">
+        <div className = "footer-wrapper">
+          footer
+        </div>
+      </footer>
     </div>
   );
 }
 
-export default App;
+export default App; 

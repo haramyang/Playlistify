@@ -1,12 +1,47 @@
-.App-header {
-  height: 10vh;
-  background-color: blue;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-style: 
+}
+
+a:hover {
+  opacity:0.5;
+  text-decoration:none;
+}
+
+.header {
+  height: 20vh;
+  width: 100%;
+  background-color: #5995DA;  /* Blue */
+  display:flex;
+  align-items: center;
+}
+
+.header-wrapper {
+  height: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
 }
 
 .logo {
-  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 100px;
 }
 
 .nav-bar {
-  background-color: green;
+  width: 300px;
+  display: flex;
+  justify-content: flex-end;
+  justify-content: space-between;
+  margin-right: 80px;
 }

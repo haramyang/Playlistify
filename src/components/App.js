@@ -1,34 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-
-const style = {
-    height: '20vh',
-    background : '#88B9D6',
-};
 
 class App extends Component {
   render(){
     return (
       <div className="App">
-        <div className = "header">
-          <AppBar style={style}>
-            <Toolbar>
-              <div className = "header-wrapper">
-                <div className = "logo"> 
-                  <div><a href = '/'><i className="large material-icons" style={{fontSize: '50px'}}>library_music</i></a></div>
-                </div>
-                <div className = "nav-bar">
-                  <div><a href = "/" className = "profile"> Personal Profile </a></div>
-                  <div><a href = "/top-artists" className = "artist"> Artists </a></div>
-                  <div><a href = "/top-tracks" className = "tracks"> Tracks </a></div>
-                </div>
-              </div>
-            </Toolbar>
-          </AppBar>
-        </div>
+        <header className = "App-header">
+          <div className = "header-wrapper">
+            <div className = "logo"> 
+              <div><a href = '/'><i className="large material-icons" style={{fontSize: '50px'}}>library_music</i></a></div>
+            </div>
+            <div className = "nav-bar">
+              <div><a href = "/" className = "profile"><p> Personal Profile </p></a></div>
+              <div><a href = "/top-artists" className = "artist"><p> Artists </p></a></div>
+              <div><a href = "/top-tracks" className = "tracks"><p> Tracks </p></a></div>
+            </div>
+          </div>
+        </header>
 
         <div className = "content">
           <div className = "content-wrapper">

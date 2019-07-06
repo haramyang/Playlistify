@@ -10,13 +10,13 @@ a {
   font-style: 
 }
 
-a:hover {
+p:hover {
   opacity:0.5;
   text-decoration:none;
 }
 
-.header {
-  height: 20vh;
+.App-header {
+  height: 11vh;
   width: 100%;
   background-color: #5995DA;  /* Blue */
   display:flex;
@@ -24,7 +24,7 @@ a:hover {
 }
 
 .header-wrapper {
-  height: 5vh;
+  height: 6vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -44,4 +44,10 @@ a:hover {
   justify-content: flex-end;
   justify-content: space-between;
   margin-right: 80px;
+}
+
+.nav-bar p {
+  color: white;
+  font-style: bold;
+  font-size: 17px;
 }

@@ -5,6 +5,7 @@ class App extends Component {
   render(){
     return (
       <div className="App">
+        {/*}
         <header className = "App-header">
           <div className = "header-wrapper">
             <div className = "logo"> 
@@ -17,6 +18,7 @@ class App extends Component {
             </div>
           </div>
         </header>
+        */}
 
         <div className = "content">
           <div className = "content-wrapper">

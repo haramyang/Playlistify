@@ -3,8 +3,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 
 const style = {
-	background: 'white',
-	opacity: '0.7'
+	background: '#E1D7D6',
+	opacity: '0.8'
 }
 
 class Header extends Component {

@@ -24,13 +24,17 @@ a {
   font-style: 
 }
 
-p:hover {
+.nav-bar p {
+  opacity: 1;
+}
+
+.nav-bar p:hover {
   opacity:0.5;
   text-decoration:none;
 }
 
 #root{
-	background-image: url(./static/background.jpg);
+	background-image: url(./static/background2.jpg);
 	background-size: cover;
 	background-position: center center;
 	height:766px;

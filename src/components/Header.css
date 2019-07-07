@@ -1,0 +1,18 @@
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 100px;
+}
+
+.nav-bar {
+  width: 300px;
+  display: flex;
+  justify-content: flex-end;
+  justify-content: space-between;
+  margin-right: 80px;
+}
+
+.nav-bar p {
+  font-style: bold;
+  font-size: 17px;
+}

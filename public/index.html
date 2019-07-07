@@ -7,24 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel ="stylesheet" href = "../index.css">
+    <link rel="stylesheet" href = './index.css'>
     <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <header class = "App-header">
-      <div class = "header-wrapper">
-        <div class = "logo"> 
-          <div><a href = '/'><i class="large material-icons" style="font-size:50px">library_music</i></a></div>
-        </div>
-        <div class = "nav-bar">
-          <div><a href = "/" class = "profile"><p> Personal Profile </p></a></div>
-          <div><a href = "/top-artists" class = "artist"><p> Artists </p></a></div>
-          <div><a href = "/top-tracks" class = "tracks"><p> Tracks </p></a></div>
-        </div>
-      </div>
-    </header>
     <div id="root">
+      <header id = "App-header"></header>
+      <div id="content"></div>
     </div>
+    
+    <footer class = "App-footer">
+      <div class = "footer-wrapper">
+        footer
+      </div>
+    </footer>
   </body>
 </html>

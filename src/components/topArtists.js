@@ -21,7 +21,7 @@ class TopArtists extends Component {
 		          	  <img src='#' alt='artistImage'/>
 		          	</div>
 
-			        <div className="content">
+			        <div className="content-w">
 			          Information about Hillsong United.
 			        </div>
 			        <button className="playArtist">Play Hillsong United</button>

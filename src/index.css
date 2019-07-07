@@ -29,17 +29,23 @@ p:hover {
   text-decoration:none;
 }
 
+#root{
+	background-image: url(./static/background.jpg);
+	background-size: cover;
+	background-position: center center;
+	height:766px;
+	width:100%;
+}
+
 .App-header {
-  height: 11vh;
   width: 100%;
-  background-color: #5995DA;  /* Blue */
   display:flex;
   align-items: center;
 }
 
 .header-wrapper {
-  height: 6vh;
   width: 100%;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,7 +67,11 @@ p:hover {
 }
 
 .nav-bar p {
-  color: white;
   font-style: bold;
   font-size: 17px;
+}
+
+footer {
+	background-color: black;
+	height:100px;
 }

@@ -2,20 +2,18 @@
   display:flex;
   justify-content: center;
   flex-direction: column;
+    height: 100vh;
 }
-
-/*
 
 .name-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height: 100%;
   width: 100%;
-  margin-top: 570px;
   vertical-align: top;
 }
-
+/*
 .App-name {
 	background-color: #2D292A;
 	border-width: 0;
@@ -38,9 +36,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
+  height: 50%;
   width: 100%;
-  margin-top: 630px;
 }
 
 .login {

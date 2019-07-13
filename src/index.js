@@ -14,5 +14,5 @@ const routing = (
 		<Route path = '/top-tracks' component = {TopTracks} />
 	</Router>
 )
-ReactDOM.render(<Header />, document.getElementById('App-header'));
+//ReactDOM.render(<Header />, document.getElementById('App-header'));
 ReactDOM.render(routing, document.getElementById('content'));

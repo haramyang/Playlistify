@@ -8,18 +8,30 @@ const style = {
 }
 
 class Header extends Component {
+	constructor(props) {
+		super(props);
+	}
 	render() {
+		const links = this.props.loggedIn ? {
+			home: '/',
+			topArtists: '/top-artists',
+			topTracks: '/top-tracks'
+		} : {
+			home: '/',
+			topArtists: '/',
+			topTracks: '/'
+		}
 		return(
 			<AppBar style = {style}>
           	  <Toolbar>
 				<div className = "header-wrapper">
 		          <div className = "logo"> 
-		            <div><a href = '/'><i className="large material-icons" style={{fontSize: "50px"}}>library_music</i></a></div>
+		            <div><a href = {links.home}><i className="large material-icons" style={{fontSize: "50px"}}>library_music</i></a></div>
 		          </div>
 		          <div className = "nav-bar">
-		            <div><a href = "/" className = "profile"><p> Personal Profile </p></a></div>
-		            <div><a href = "/top-artists" className = "artist"><p> Artists </p></a></div>
-		            <div><a href = "/top-tracks" className = "tracks"><p> Tracks </p></a></div>
+		            <div><a href = {links.home} className = "profile"><p> Personal Profile </p></a></div>
+		            <div><a href = {links.topArtists} className = "artist"><p> Artists </p></a></div>
+		            <div><a href = {links.topTracks} className = "tracks"><p> Tracks </p></a></div>
 		          </div>
 		        </div>
 		      </Toolbar>

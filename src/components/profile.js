@@ -5,7 +5,7 @@ class Profile extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            personalInfo = {},
+            personalInfo: {},
         }
     }
 
@@ -16,13 +16,11 @@ class Profile extends Component {
             if (!response.ok) throw Error(response.statusText);
             return response.json();
           })
-          .catch(error => console.log(error));
           .then((data) => {
             this.setState({
-               personalInfo = data,
+               personalInfo: data,
             });
           });
-          .catch(error => console.log(error));
     }
 }
 

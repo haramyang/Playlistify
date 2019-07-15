@@ -33,14 +33,6 @@ a {
   text-decoration:none;
 }
 
-#root{
-	background-image: url(./static/background2.jpg);
-	background-size: cover;
-	background-position: center center;
-	height: 100vh;
-	width: 100%;
-}
-
 .App-header {
   width: 100%;
   display:flex;

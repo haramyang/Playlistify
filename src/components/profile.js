@@ -9,6 +9,7 @@ class Profile extends Component {
         }
     }
 
+    /*
     // The componentDidMount() method runs after the component output has been rendered to the DOM
     componentDidMount() {
         fetch(this.props.url, {credentials: 'include'})
@@ -21,6 +22,12 @@ class Profile extends Component {
                personalInfo: data,
             });
           });
+    }
+    */
+    render() {
+        return(
+            <p> HELLO </p>
+        )
     }
 }
 

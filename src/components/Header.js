@@ -35,7 +35,7 @@ class Header extends Component {
           	  <Toolbar>
 				<div className = "header-wrapper">
 		          <div className = "logo"> 
-		            <div><a href = {this.state.home}><i className="large material-icons" style={{fontSize: "50px"}}>library_music</i></a></div>
+		            <div><a href = {this.state.profile}><i className="large material-icons" style={{fontSize: "50px"}}>library_music</i></a></div>
 		          </div>
 		          <div className = "nav-bar">
 		            <div><a href = {this.state.profile} className = "profile"><p> Personal Profile </p></a></div>

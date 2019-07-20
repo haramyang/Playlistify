@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import profile.css from './profile.css;
 
-class Profile extends Component {
+class Recent extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -31,4 +31,4 @@ class Profile extends Component {
     }
 }
 
-export default Profile
+export default Recent

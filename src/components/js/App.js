@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Header from "./Header";
 import Login from './login';
-import Profile from "./profile";
+import Recent from "./recent";
 import TopArtists from "./topArtists";
 import TopTracks from "./topTracks";
 import { createBrowserHistory } from "history";

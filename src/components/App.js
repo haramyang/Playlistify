@@ -10,6 +10,8 @@ import Login from './login';
 import Profile from "./profile";
 import TopArtists from "./topArtists";
 import TopTracks from "./topTracks";
+import { createBrowserHistory } from "history";
+const history = createBrowserHistory()
 
 const spotifyApi = new Spotify();
 
@@ -21,10 +23,8 @@ class App extends Component {
         const token = params.access_token;
         if(token) {
             spotifyApi.setAccessToken(token);
+            window.localStorage.setItem("jwt", token);
         }
-        this.state = {
-            loggedIn: token ? true : false
-        };
     }
     getHashParams() {
         var hashParams = {};
@@ -35,12 +35,12 @@ class App extends Component {
         }
         return hashParams;
     }
-
     render(){
         return (
             <div className="App">
                 <header id = "App-header">
-                    <Header loggedIn = {this.state.loggedIn} />
+                    <Header />
+                    <TopArtists />
                 </header>
             </div>
         );

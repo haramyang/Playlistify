@@ -14,6 +14,7 @@ const routing = (
 	<Router>
 		<Route exact path = '/' component = {Login} />
 		<Route path ='/login' component = {Login} />
+		<Route path = '/home' component = {App} />
 		<Route path = '/profile' component = {Profile} />
 		<Route path = '/top-artists' component = {TopArtists} />
 		<Route path = '/top-tracks' component = {TopTracks} />

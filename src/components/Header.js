@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import { Link } from 'react-router-dom'
 
 const style = {
 	background: '#E1D7D6',
@@ -19,7 +20,7 @@ class Header extends Component {
 	}
 
 	componentDidMount() {
-		if(this.props.loggedIn) {
+		if(window.localStorage.getItem('jwt') !== null) {
 			this.setState({
 				home: '/',
 				profile: '/profile',
@@ -38,9 +39,9 @@ class Header extends Component {
 		            <div><a href = {this.state.profile}><i className="large material-icons" style={{fontSize: "50px"}}>library_music</i></a></div>
 		          </div>
 		          <div className = "nav-bar">
-		            <div><a href = {this.state.profile} className = "profile"><p> Personal Profile </p></a></div>
-		            <div><a href = {this.state.topArtists} className = "artist"><p> Artists </p></a></div>
-		            <div><a href = {this.state.topTracks} className = "tracks"><p> Tracks </p></a></div>
+		            <div className = "profile"><Link to = '/home'><p> Recent </p></Link></div>
+		            <div className = "artist"><Link to = '/top-artists'><p> Artists </p></Link></div>
+		            <div className = "tracks"><Link to = '/top-tracks'><p> Tracks </p></Link></div>
 		          </div>
 		        </div>
 		      </Toolbar>

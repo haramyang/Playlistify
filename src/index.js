@@ -8,8 +8,9 @@ import TopArtists from './components/js/topArtists.js';
 import TopTracks from './components/js/topTracks.js';
 import Header from './components/js/Header.js';
 import Login from "./components/js/login";
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import { Redirect, Switch, Route, Link, BrowserRouter as Router } from 'react-router-dom'
 
+/*
 const routing = (
 	<Router>
 		<Route exact path = '/' component = {Login} />
@@ -18,6 +19,17 @@ const routing = (
 		<Route path = '/profile' component = {Recent} />
 		<Route path = '/top-artists' component = {TopArtists} />
 		<Route path = '/top-tracks' component = {TopTracks} />
+	</Router>
+)
+ */
+
+const routing = (
+	<Router>
+		<Switch>
+			<Route exact path="/" component={App} />
+			<Route exact path="/login" component={Login} />
+			<Redirect to = {App} />
+		</Switch>
 	</Router>
 )
 

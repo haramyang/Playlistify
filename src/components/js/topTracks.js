@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './topTracks.css';
+import '../css/topTracks.css';
 import Button from '@material-ui/core/Button';
 
 class TopTracks extends Component {

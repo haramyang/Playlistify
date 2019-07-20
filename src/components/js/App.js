@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../css/App.css';
 import Spotify from 'spotify-web-api-js';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import background from '../static/background.jpg'

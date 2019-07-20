@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './topArtists.css';
+import '../css/topArtists.css';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 

@@ -28,7 +28,10 @@ const routing = (
 		<Switch>
 			<Route exact path="/" component={App} />
 			<Route exact path="/login" component={Login} />
-			<Redirect to = {App} />
+			/*<Route path = '/token' component = {App} />*/
+			<Route exact path = '/top-artists' component = {TopArtists} />
+			<Route exact path = '/top-tracks' component = {TopTracks} />
+			<Redirect to = '/login' />
 		</Switch>
 	</Router>
 )

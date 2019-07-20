@@ -17,52 +17,54 @@ const spotifyApi = new Spotify();
 
 class App extends Component {
     constructor() {
+        console.log("constructor");
         super();
-        // stores access token and refresh token
+        this.state = {
+            loggedIn: false,
+        }
+    }
+    componentWillMount() {
+        console.log("will mount");
         const params = this.getHashParams();
         const token = params.access_token;
+        console.log("TOKEN", token);
         if(token) {
             console.log("Received Token");
-            this.state = {
+            this.setState({
                 loggedIn: true,
-            }
+            });
             spotifyApi.setAccessToken(token);
-            window.localStorage.setItem("jwt", token);
-        }
-        else {
-            this.state = {
-                loggedIn: false,
-            }
+            window.sessionStorage.setItem("jwt", token);
+            console.log(this.state)
         }
     }
     getHashParams() {
-        var hashParams = {};
-        var e, r = /([^&;=]+)=?([^&;]*)/g,
+        let hashParams = {};
+        let e, r = /([^&;=]+)=?([^&;]*)/g,
             q = window.location.hash.substring(1);
+        console.log(window.location.hash);
         while ( e = r.exec(q)) {
             hashParams[e[1]] = decodeURIComponent(e[2]);
         }
         return hashParams;
     }
-    render(){
-        if(this.state.loggedIn !== true) {
+    render() {
+        console.log(this.state)
+        if (!this.state.loggedIn) {
             console.log("NOT LOGGED IN SO REDIRECTING")
-            return <Redirect to = '/login' />
-        }
-        else {
+            return <Redirect to='/login'/>
+        } else {
             console.log("LOGGED IN");
             return (
                 <div className="App">
-                    <header id = "App-header">
-                        <Route path='/top-artists' component={TopArtists} />
-                        /*
-                        <Header />
-                        <TopArtists />
-                         */
+                    <header id="App-header">
+                        <p> HELLLLLO </p>
+                        <Redirect to ='/top-tracks' />
                     </header>
                 </div>
             );
         }
+        //return setTimeout(this.loginHandler, 1000);
     }
 }
 

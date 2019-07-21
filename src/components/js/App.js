@@ -16,11 +16,12 @@ const history = createBrowserHistory()
 const spotifyApi = new Spotify();
 
 class App extends Component {
-    constructor() {
+    constructor(props) {
         console.log("constructor");
-        super();
+        super(props);
         this.state = {
             loggedIn: false,
+            route: '',
         }
     }
     componentWillMount() {
@@ -32,6 +33,7 @@ class App extends Component {
             console.log("Received Token");
             this.setState({
                 loggedIn: true,
+                route: this.props.route,
             });
             spotifyApi.setAccessToken(token);
             window.sessionStorage.setItem("jwt", token);
@@ -49,6 +51,7 @@ class App extends Component {
         return hashParams;
     }
     render() {
+        const comp = TopArtists;
         console.log(this.state)
         if (!this.state.loggedIn) {
             console.log("NOT LOGGED IN SO REDIRECTING")
@@ -58,13 +61,11 @@ class App extends Component {
             return (
                 <div className="App">
                     <header id="App-header">
-                        <p> HELLLLLO </p>
-                        <Redirect to ='/top-tracks' />
+                        <Redirect to = "/top-tracks" />
                     </header>
                 </div>
             );
         }
-        //return setTimeout(this.loginHandler, 1000);
     }
 }
 

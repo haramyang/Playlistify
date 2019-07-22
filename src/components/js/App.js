@@ -13,7 +13,7 @@ import TopTracks from "./topTracks";
 import { createBrowserHistory } from "history";
 const history = createBrowserHistory()
 
-const spotifyApi = new Spotify();
+export const spotifyApi = new Spotify();
 
 class App extends Component {
     constructor(props) {
@@ -68,5 +68,4 @@ class App extends Component {
         }
     }
 }
-
 export default App; 

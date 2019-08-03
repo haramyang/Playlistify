@@ -37,7 +37,6 @@ class App extends Component {
             });
             spotifyApi.setAccessToken(token);
             window.sessionStorage.setItem("jwt", token);
-            console.log(this.state)
         }
     }
     getHashParams() {

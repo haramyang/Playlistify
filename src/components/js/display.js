@@ -13,11 +13,26 @@ class Display extends Component {
         this.getTopTracks = this.getTopTracks.bind(this);
         this.state = {
             // will be an array of objects
-            items: []
+            items: [],
+            artist: 0,
         }
     }
     componentWillMount() {
         this.getTopTracks();
+    }
+    getTopArtists() {
+        // get Elvis' albums, using Promises through Promise, Q or when
+        spotifyApi.getMyTopArtists({'limit': 50})
+            .then((data) => {
+                let tempItems = this.state.items;
+                tempItems = data.items;
+                this.setState({
+                    items: tempItems,
+                    artist: 1
+                });
+            }, function(err) {
+                console.error(err);
+            });
     }
     getTopTracks() {
         // get Elvis' albums, using Promises through Promise, Q or when
@@ -26,7 +41,8 @@ class Display extends Component {
             let tempItems = this.state.items;
             tempItems = data.items;
             this.setState({
-                items: tempItems
+                items: tempItems,
+                artist: 0
             });
           }, function(err) {
             console.error(err);
@@ -45,20 +61,15 @@ class Display extends Component {
                 <div className = "content-wrapper">
                     <div className ="options">
                         <span>
-                            <button> Tracks </button>
-                            <button> Artists </button>
+                            <button onClick = {() => this.getTopTracks()}> Tracks </button>
+                            <button onClick = {() => this.getTopArtists()}> Artists </button>
                             <button> Recent </button>
                         </span>
                     </div>
                     <div className = "content">
                         <div className = "data">
                             {this.state.items.map((item,key) =>
-                                /*
-                                (<div className = "item" key = {item.id}>
-                                    <p> {item.name} </p>
-                                </div>),
-                                 */
-                                <Item item={item} key={item.id} />
+                                <Item item={item} key={item.id} artist = {this.state.artist} />
                             )}
                         </div>
                     </div>

@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom'
 
 const style = {
 	background: '#E1D7D6',
-	opacity: '0.8'
+	opacity: '0.8',
+	height: '70px',
 }
 
 class Header extends Component {

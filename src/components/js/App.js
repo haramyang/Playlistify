@@ -58,11 +58,7 @@ class App extends Component {
         } else {
             console.log("LOGGED IN");
             return (
-                <div className="App">
-                    <header id="App-header">
-                        <Redirect to = "/top-tracks" />
-                    </header>
-                </div>
+                <Redirect to = "/top-tracks" />
             );
         }
     }

@@ -14,7 +14,7 @@ class Display extends Component {
         this.state = {
             // will be an array of objects
             items: [],
-            artist: 0,
+            type: 'tracks',
         }
     }
     componentWillMount() {
@@ -28,7 +28,7 @@ class Display extends Component {
                 tempItems = data.items;
                 this.setState({
                     items: tempItems,
-                    artist: 1
+                    type: 'artists'
                 });
             }, function(err) {
                 console.error(err);
@@ -42,13 +42,28 @@ class Display extends Component {
             tempItems = data.items;
             this.setState({
                 items: tempItems,
-                artist: 0
+                type: 'tracks'
             });
           }, function(err) {
             console.error(err);
           });
     }
+    getRecentlyPlayed() {
+        spotifyApi.getMyRecentlyPlayedTracks({'limit': 50})
+            .then((data) => {
+                let tempItems = this.state.items;
+                tempItems = data.items;
+                this.setState({
+                    items: tempItems,
+                    type: 'recent'
+                });
+            }, function(err) {
+                console.error(err);
+            });
+    }
     render() {
+        // TODO: add this later when you figure out recentplayplayed api
+        //<button onClick = {() => this.getRecentlyPlayed()}> Recent </button>
         console.log(sessionStorage.getItem('jwt'));
         if(sessionStorage.getItem('jwt') === null) {
             return <Redirect to='/login'/>
@@ -63,13 +78,12 @@ class Display extends Component {
                         <span>
                             <button onClick = {() => this.getTopTracks()}> Tracks </button>
                             <button onClick = {() => this.getTopArtists()}> Artists </button>
-                            <button> Recent </button>
                         </span>
                     </div>
                     <div className = "content">
                         <div className = "data">
                             {this.state.items.map((item,key) =>
-                                <Item item={item} key={item.id} artist = {this.state.artist} />
+                                <Item item={item} key={item.id} type = {this.state.type} />
                             )}
                         </div>
                     </div>

@@ -58,7 +58,7 @@ class App extends Component {
         } else {
             console.log("LOGGED IN");
             return (
-                <Redirect to = "/top-tracks" />
+                <Redirect to = "/display" />
             );
         }
     }

@@ -18,7 +18,7 @@ class Display extends Component {
         }
     }
     componentWillMount() {
-        this.getTopTracks();
+        //this.getTopTracks();
     }
     getTopArtists() {
         // get Elvis' albums, using Promises through Promise, Q or when
@@ -78,6 +78,8 @@ class Display extends Component {
                         <span>
                             <button onClick = {() => this.getTopTracks()}> Tracks </button>
                             <button onClick = {() => this.getTopArtists()}> Artists </button>
+                            <button onClick = {() => this.getRecentlyPlayed()}> Recent </button>
+                            <button> MAKE PLAYLIST </button>
                         </span>
                     </div>
                     <div className = "content">

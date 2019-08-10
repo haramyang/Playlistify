@@ -28,9 +28,7 @@ const routing = (
 	<Router>
 		<Switch>
 			<Route exact path="/" component={App} />
-			<Route exact path = '/top-artists' component = {() => <Display route = '/top-artists' />} />
-			<Route exact path = '/top-tracks' component = {() => <Display route = '/top-tracks' />} />
-			<Route exact path = '/recent' componet = {() => <Display route = '/recent' />} />
+			<Route exact path = '/display' component = {() => <Display route = '/display' />} />
 			<Route exact path="/login" component={Login} />
 			<Redirect to = '/login' />
 		</Switch>

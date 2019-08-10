@@ -7,7 +7,7 @@ class Login extends Component {
             <div className = "loginPage">
                 <div className = "name-wrapper">
                     <div className = "name">
-                        <h1> Spotifavorify </h1>
+                        <h1> Playlistify </h1>
                     </div>
                 </div>
                 <div className = "login-wrapper">

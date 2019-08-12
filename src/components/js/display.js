@@ -62,8 +62,6 @@ class Display extends Component {
             });
     }
     render() {
-        // TODO: add this later when you figure out recentplayplayed api
-        //<button onClick = {() => this.getRecentlyPlayed()}> Recent </button>
         console.log(sessionStorage.getItem('jwt'));
         if(sessionStorage.getItem('jwt') === null) {
             return <Redirect to='/login'/>

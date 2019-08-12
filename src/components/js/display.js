@@ -22,7 +22,7 @@ class Display extends Component {
     }
     getTopArtists() {
         // get Elvis' albums, using Promises through Promise, Q or when
-        spotifyApi.getMyTopArtists({'limit': 50})
+        spotifyApi.getMyTopArtists({'limit': 50, 'time_range': 'medium_term'})
             .then((data) => {
                 let tempItems = this.state.items;
                 tempItems = data.items;
@@ -36,7 +36,7 @@ class Display extends Component {
     }
     getTopTracks() {
         // get Elvis' albums, using Promises through Promise, Q or when
-        spotifyApi.getMyTopTracks({'limit': 50})
+        spotifyApi.getMyTopTracks({'limit': 50, 'time_range': 'medium_term'})
           .then((data) => {
             let tempItems = this.state.items;
             tempItems = data.items;

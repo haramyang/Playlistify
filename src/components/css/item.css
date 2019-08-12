@@ -1,1 +1,3 @@
-item.css
+.item {
+	flex: 2;
+}

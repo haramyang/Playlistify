@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-
 let counter = 0;
 class Item extends Component { 
 	render() {
 		let images = [];
 		let name = "";
 		let url = "";
+		let html;
 		switch(this.props.type) {
 			case 'tracks':
 				images = this.props.item.album.images;
@@ -30,8 +30,12 @@ class Item extends Component {
 		counter++;
 		return(
 			<div className = "item">
-				<a href = {url}> <p>{name} </p></a>
-				<img src = {images[0].url} style = {{height: 100, width: 100}} />
+				<div className = "item-first-row">
+					<span> <a href = {url}> <p> {name} </p></a> </span>
+				</div>
+				<div className = "item-second-row">
+					<img src = {images[0].url} style = {{height: 100, width: 100}} />
+				</div>
 			</div>
 		)
 	}

@@ -36,4 +36,4 @@ const routing = (
 )
 
 //ReactDOM.render(<Header />, document.getElementById('App-header'));
-ReactDOM.render(routing, document.getElementById('content'));
+ReactDOM.render(routing, document.getElementById('root'));

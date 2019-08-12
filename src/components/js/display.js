@@ -14,11 +14,11 @@ class Display extends Component {
         this.state = {
             // will be an array of objects
             items: [],
-            type: 'tracks',
+            type: 'tracks'
         }
     }
     componentWillMount() {
-        //this.getTopTracks();
+        this.getTopTracks();
     }
     getTopArtists() {
         // get Elvis' albums, using Promises through Promise, Q or when
@@ -28,7 +28,7 @@ class Display extends Component {
                 tempItems = data.items;
                 this.setState({
                     items: tempItems,
-                    type: 'artists'
+                    type: 'artists',
                 });
             }, function(err) {
                 console.error(err);
@@ -79,10 +79,13 @@ class Display extends Component {
                             <button onClick = {() => this.getRecentlyPlayed()}> Recent </button>
                             <button> MAKE PLAYLIST </button>
                         </span>
+                        <button> All Time </button>
+                        <button> Past 6 Months </button>
+                        <button> Past Month </button>
                     </div>
                     <div className = "content">
                         <div className = "data">
-                            {this.state.items.map((item,key) =>
+                            {this.state.items.map((item,key) => 
                                 <Item item={item} key={item.id} type = {this.state.type} />
                             )}
                         </div>

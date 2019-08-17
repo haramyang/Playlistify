@@ -18,14 +18,15 @@ class Display extends Component {
         }
     }
     componentWillMount() {
-        this.getTopTracks();
+        this.getTopArtists();
     }
     getTopArtists() {
         // get Elvis' albums, using Promises through Promise, Q or when
-        spotifyApi.getMyTopArtists({'limit': 50, 'time_range': 'medium_term'})
+        spotifyApi.getMyTopArtists({'limit': 50, /*'time_range': 'medium_term'*/})
             .then((data) => {
                 let tempItems = this.state.items;
                 tempItems = data.items;
+                console.log(tempItems);
                 this.setState({
                     items: tempItems,
                     type: 'artists',

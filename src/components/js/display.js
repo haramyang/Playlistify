@@ -26,7 +26,6 @@ class Display extends Component {
             .then((data) => {
                 let tempItems = this.state.items;
                 tempItems = data.items;
-                console.log(tempItems);
                 this.setState({
                     items: tempItems,
                     type: 'artists',
@@ -62,8 +61,49 @@ class Display extends Component {
                 console.error(err);
             });
     }
+    addTracksToPlaylist() {
+        spotifyApi.getUserPlaylists()
+            .then((data) => {
+                console.log(data.items);
+                console.log(data.items[0].name);
+                let uri_arr = data.items[0].uri.split(':');
+                let playListID = uri_arr[2];
+                let trackURIs = [];
+                if(this.state.type === "recent") {
+                    this.state.items.map((item) => {
+                        trackURIs.push(item.track.uri);
+                    });
+                }
+                else{
+                    this.state.items.map((item) => {
+                        trackURIs.push(item.uri);
+                    });
+                };
+                console.log(playListID);
+                console.log(trackURIs);
+                spotifyApi.addTracksToPlaylist(playListID, trackURIs);
+            });
+    }
+    makePlayList() {
+        spotifyApi.getMe()
+            .then((data) => {
+                let uri = data.uri;
+                let uri_arr = uri.split(':');
+                let user_id = uri_arr[2];
+                let options = {
+                                "name": "Custom Playlist",
+                                "description": "New playlist description",
+                                "public": false
+                              };
+                spotifyApi.createPlaylist(user_id, options)
+                    .then(() => {
+                        this.addTracksToPlaylist(user_id);
+                    });
+            }, function(err) {
+                console.error(err);
+            });
+    }
     render() {
-        console.log(sessionStorage.getItem('jwt'));
         if(sessionStorage.getItem('jwt') === null) {
             return <Redirect to='/login'/>
         }
@@ -78,7 +118,7 @@ class Display extends Component {
                             <button onClick = {() => this.getTopTracks()}> Tracks </button>
                             <button onClick = {() => this.getTopArtists()}> Artists </button>
                             <button onClick = {() => this.getRecentlyPlayed()}> Recent </button>
-                            <button> MAKE PLAYLIST </button>
+                            <button onClick = {() => this.makePlayList()}> MAKE PLAYLIST </button>
                         </span>
                         <button> All Time </button>
                         <button> Past 6 Months </button>
